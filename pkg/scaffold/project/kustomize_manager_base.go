@@ -39,6 +39,8 @@ func (c *KustomizeManager) GetInput() (input.Input, error) {
 	return c.Input, nil
 }
 
-var kustomizeManagerTemplate = `resources:
+var kustomizeManagerTemplate = `apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
 - manager.yaml
 `

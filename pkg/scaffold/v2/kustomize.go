@@ -51,7 +51,10 @@ func (c *Kustomize) GetInput() (input.Input, error) {
 	return c.Input, nil
 }
 
-var kustomizeTemplate = `# Adds namespace to all resources.
+var kustomizeTemplate = `apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Adds namespace to all resources.
 namespace: {{.Prefix}}-system
 
 # Value of this field is prepended to the

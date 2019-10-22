@@ -39,7 +39,9 @@ func (c *KustomizeRBAC) GetInput() (input.Input, error) {
 	return c.Input, nil
 }
 
-var kustomizeRBACTemplate = `resources:
+var kustomizeRBACTemplate = `apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
 - rbac_role.yaml
 - rbac_role_binding.yaml
   # Comment the following 3 lines if you want to disable

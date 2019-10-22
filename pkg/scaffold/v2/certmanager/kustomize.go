@@ -36,7 +36,9 @@ func (p *Kustomization) GetInput() (input.Input, error) {
 	return p.Input, nil
 }
 
-var kustomizationTemplate = `resources:
+var kustomizationTemplate = `apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
 - certificate.yaml
 
 configurations:

@@ -78,6 +78,8 @@ func (c *Kustomization) Update() error {
 var kustomizationTemplate = fmt.Sprintf(`# This kustomization.yaml is not intended to be run by itself,
 # since it depends on service name and namespace that are out of this kustomize package.
 # It should be run by config/default
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 resources:
 %s
 

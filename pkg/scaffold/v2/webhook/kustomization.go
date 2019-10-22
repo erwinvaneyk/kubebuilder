@@ -39,7 +39,9 @@ func (c *Kustomization) GetInput() (input.Input, error) {
 	return c.Input, nil
 }
 
-var KustomizeWebhookTemplate = `resources:
+var KustomizeWebhookTemplate = `apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
 - manifests.yaml
 - service.yaml
 
